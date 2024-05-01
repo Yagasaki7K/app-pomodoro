@@ -1,44 +1,93 @@
-# Pomodoro Timer ⏰
+<p align="center">
+   <img src="https://raw.githubusercontent.com/Yagasaki7K/app-pomodoro/main/favicon.svg" width="600"/>
+</p>
 
-An intuitive timer built with React, following the Pomodoro technique 🍅
+<p align="center">
+   <a href="https://www.linkedin.com/in/andersonmarlon/">
+      <img alt="AndersonMarlon" src="https://img.shields.io/badge/-AndersonMarlon-00acff?style=flat&logo=Linkedin&logoColor=white" />
+   </a>
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Yagasaki7K/app-pomodoro?color=00acff">
 
-![Pomodor Timer](pomodoro.png)
+  <a href="https://github.com/Yagasaki7K/app-pomodoro/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Yagasaki7K/app-pomodoro?color=00acff">
+  </a>
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-00acff">
+  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/Yagasaki7K/app-pomodoro?color=00acff" />
+  <a href="https://twitter.com/yagasaki7k">
+    <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Contact%20me%20at%20@Yagasaki7K" alt="Contact me at @Yagasaki7K" />
+  </a>
+</p>
 
-> If you found this project helpful or useful, please consider giving it a ⭐
+<div align="center">
+  <sub>Onigiri Hardcore. Built with 💙 by
+    <a href="https://github.com/Yagasaki7K">Anderson "Yagasaki" Marlon</a> and
+    <a href="https://github.com/Yagasaki7K/app-pomodoro/graphs/contributors">
+      contributors
+    </a>
+  </sub>
+</div>
 
-## Development 🔧
+<p align="center">
+  <img src="https://github.com/Yagasaki7K/website-cafecomleite/assets/23272064/febb5104-0741-481a-9171-44ff1b2b3e26" alt="café com leite palette" width="400" />
+</p>
 
-### Getting started
+# 📌 Table of Contents
 
-- Clone this repository:
+- [📌 Table of Contents](#-table-of-contents)
+- [👀 Demo Website](#-demo-website)
+- [💻 Technologies](#-technologies)
+- [🚀 Features](#-features)
+- [🚧 How to run](#-how-to-run)
+- [🐛 Issues](#-issues)
+- [🎉 Contributing](#-contributing)
+- [📕 License](#-license)
 
-```shell
-$ git clone git@github.com:SabrinaBarros/pomodoroTimer.git
+# 👀 Demo Website
+
+👉  Demo: https://onigirihardcore.com.br/
+
+# 💻 Technologies
+
+This project was made using the follow technologies:
+
+* ReactJS
+* NextJS
+* Javascript
+* JSON
+* Styled Components
+
+# 🚀 Features
+
+News website about games, video games, movies, series, technology and more...
+
+# 🚧 How to run
+
+```bash
+# Clone Repository
+$ git clone https://github.com/Yagasaki7K/app-pomodoro.git
+$ Go to folder using terminal
+$ yarn (needs yarn installed)
+$ yarn dev (if you wanna change something) // yarn start (just to see running)
 ```
-```shell
-$ cd pomodoroTimer
-```
 
-- And install all dependencies:
+If you want something, wait for `yarn build` to be obeyed, and after that open a little change decision!
 
-```shell
-$ npm install
-```
+# 🐛 Issues
 
-- Start the project:
+Feel free to **file a new issue** with a respective title and description on the [Onigiri Hardcore](https://github.com/Yagasaki7K/app-pomodoro/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**!
 
-```shell
-$ npm run dev
-```
+# 🎉 Contributing
 
-## Contributing 💌
+First of all, thank you for being interested in helping out, your time is always appreciated in every way. :100:
 
-This project was created as a personal initiative to develop my front-end skills and share my work with the community. It is constantly evolving and always open to contributions and constructive feedback. If you would like to contribute to the project, feel free to check the [CONTRIBUTING](CONTRIBUTING.md) file for more information. 
+Here's some tips:
 
-## License 📃
+* Check the [issues page](https://github.com/Yagasaki7K/app-pomodoro/issues) for already opened issues (or maybe even closed ones) that might already address your question/bug/feature request.
+* Feature requests are welcomed! Provide some details on why it would be helpful for you and others, explain how you're using bull-board and if possible even some screenshots if you are willing to mock something!
 
-[MIT License](./LICENSE) © [Sabrina Barros](https://github.com/SabrinaBarros)
+# 📕 License
 
-<hr>
+Released in 2013
 
-I hope my project is useful in improving your productivity. If you have suggestions or encounter issues, please feel free to contribute or report issues. Enjoy your Pomodoro sessions! 🍅✨
+Made by [Anderson Marlon](https://github.com/Yagasaki7K) & [Kalify Team](https://github.com/KalifyInc).
+This project is under the [MIT license](./LICENSE).
