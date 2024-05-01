@@ -1,0 +1,10 @@
+{
+  "appId": "com.yagasaki.pomodoro",
+  "appName": "mobile-appomodoro",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}
