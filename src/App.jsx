@@ -28,6 +28,7 @@ class App extends React.Component {
                     this.setState({ shouldCountDown: false });
                     this.actionButtonRef.current.disabled = true;
                     toast.success('Time is over!');
+                    alert('Hey! Time is over!')
                 } else {
                     this.setState({ time: this.state.time - 1 });
                 }
