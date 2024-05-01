@@ -84,7 +84,7 @@ class App extends React.Component {
                 </div>
 
                 <footer className="footer">• Developed by <a className="footer__link" href="https://github.com/Yagasaki7K" target="_blank" rel="noreferrer">Anderson &quot;Yagasaki&quot; Marlon</a> and <a className="footer__link" href="https://github.com/Yagasaki7K/app-pomodoro/graphs/contributors" target="_blank" rel="noreferrer">Contributors</a> •</footer>
-                <footer className="footer-header">• Download Android App •</footer>
+                <footer className="footer-header">• Download <a href="https://github.com/Yagasaki7K/app-pomodoro/raw/main/appomodoro.apk" className="footer__link" target="_blank" rel="noreferrer">Android App</a> •</footer>
             </>
         )
     }
