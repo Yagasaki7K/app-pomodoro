@@ -1,25 +1,25 @@
 <p align="center">
-   <img src="https://raw.githubusercontent.com/Yagasaki7K/app-pomodoro/main/favicon.svg" width="600"/>
+   <img src="https://raw.githubusercontent.com/Yagasaki7K/app-pomodoro/main/favicon.svg" width="200"/>
 </p>
 
 <p align="center">
    <a href="https://www.linkedin.com/in/andersonmarlon/">
-      <img alt="AndersonMarlon" src="https://img.shields.io/badge/-AndersonMarlon-00acff?style=flat&logo=Linkedin&logoColor=white" />
+      <img alt="AndersonMarlon" src="https://img.shields.io/badge/-AndersonMarlon-c6a0f6?style=flat&logo=Linkedin&logoColor=white" />
    </a>
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Yagasaki7K/app-pomodoro?color=00acff">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Yagasaki7K/app-pomodoro?color=c6a0f6">
 
   <a href="https://github.com/Yagasaki7K/app-pomodoro/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Yagasaki7K/app-pomodoro?color=00acff">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Yagasaki7K/app-pomodoro?color=c6a0f6">
   </a>
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-00acff">
-  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/Yagasaki7K/app-pomodoro?color=00acff" />
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-c6a0f6">
+  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/Yagasaki7K/app-pomodoro?color=c6a0f6" />
   <a href="https://twitter.com/yagasaki7k">
     <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Contact%20me%20at%20@Yagasaki7K" alt="Contact me at @Yagasaki7K" />
   </a>
 </p>
 
 <div align="center">
-  <sub>Onigiri Hardcore. Built with 💙 by
+  <sub>Appomodoro. Built with 💜 by
     <a href="https://github.com/Yagasaki7K">Anderson "Yagasaki" Marlon</a> and
     <a href="https://github.com/Yagasaki7K/app-pomodoro/graphs/contributors">
       contributors
@@ -44,17 +44,19 @@
 
 # 👀 Demo Website
 
-👉  Demo: https://onigirihardcore.com.br/
+👉  Demo: https://appomodoro.vercel.app/
 
 # 💻 Technologies
 
 This project was made using the follow technologies:
 
 * ReactJS
-* NextJS
-* Javascript
-* JSON
-* Styled Components
+* Vite
+* Sonner
+* Million
+* Vite-plugin-pwa
+* Cypress
+* ESLint
 
 # 🚀 Features
 
@@ -66,15 +68,15 @@ News website about games, video games, movies, series, technology and more...
 # Clone Repository
 $ git clone https://github.com/Yagasaki7K/app-pomodoro.git
 $ Go to folder using terminal
-$ yarn (needs yarn installed)
-$ yarn dev (if you wanna change something) // yarn start (just to see running)
+$ bun install (needs bun installed)
+$ bun dev (if you wanna change something) // bun start (just to see running)
 ```
 
-If you want something, wait for `yarn build` to be obeyed, and after that open a little change decision!
+If you want something, wait for `bun vercel` to be obeyed, and after that open a little change decision!
 
 # 🐛 Issues
 
-Feel free to **file a new issue** with a respective title and description on the [Onigiri Hardcore](https://github.com/Yagasaki7K/app-pomodoro/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**!
+Feel free to **file a new issue** with a respective title and description on the [Appomodoro](https://github.com/Yagasaki7K/app-pomodoro/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**!
 
 # 🎉 Contributing
 
@@ -87,7 +89,7 @@ Here's some tips:
 
 # 📕 License
 
-Released in 2013
+Released in 2024
 
-Made by [Anderson Marlon](https://github.com/Yagasaki7K) & [Kalify Team](https://github.com/KalifyInc).
+Made by [Anderson Marlon](https://github.com/Yagasaki7K) & [Contributors](https://github.com/Yagasaki7K/app-pomodoro/graphs/contributors).
 This project is under the [MIT license](./LICENSE).
