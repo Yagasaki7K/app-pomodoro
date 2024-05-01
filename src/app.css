@@ -158,6 +158,10 @@ body {
   bottom: 30px;
   box-sizing: border-box;
   color: var(--text);
+
+  @media (max-width: 534px) {
+    bottom: 50px;
+  }
 }
 
 .footer {
