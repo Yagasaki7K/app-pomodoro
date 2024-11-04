@@ -79,7 +79,6 @@ class App extends React.Component {
 
     _handleTimerEnd() {
         this.setState({ shouldCountDown: false });
-        this.actionButtonRef.current.disabled = true;
 
         // Stop rain sound when the focus session ends
         if (!this.state.isBreak) {
@@ -100,8 +99,6 @@ class App extends React.Component {
         } else {
             this._setBreakTime(300, true);  // Start break session automatically
         }
-
-        this.setState({ isBreak: !this.state.isBreak });
     }
 
     _refresh() {
@@ -111,14 +108,18 @@ class App extends React.Component {
     }
 
     _togglePlay() {
-        this.setState({ shouldCountDown: !this.state.shouldCountDown }, () => {
-            if (this.state.shouldCountDown && !this.state.isBreak) {
-                this.rainAudio.play(); // Play rain sound during focus mode only
+        this.setState((prevState) => ({
+            shouldCountDown: !prevState.shouldCountDown
+        }), () => {
+            if (this.state.shouldCountDown) {
+                if (!this.state.isBreak) {
+                    this.rainAudio.play(); // Play rain sound during focus mode only
+                }
+                if (!this.timerInterval) {
+                    this._startTimer();
+                }
             } else {
                 this.rainAudio.pause(); // Pause rain sound during breaks or when paused
-            }
-            if (!this.timerInterval) {
-                this._startTimer();
             }
         });
     }
