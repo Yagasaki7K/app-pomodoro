@@ -11,23 +11,23 @@ export default defineConfig({
     svgr(),
     million.vite({ auto: true }),
     VitePWA({
-      registerType: 'autoUpdate', // Auto-update the Service Worker
+      registerType: 'prompt', // Use 'prompt' to manually update the Service Worker for easier testing
       injectRegister: 'auto', // Automatically injects the SW registration into HTML
       manifest: {
         name: 'Appomodoro',
         short_name: 'Pomodoro',
         description: 'An intuitive timer built with React, following the Pomodoro technique',
-        theme_color: '#1c1b22',
+        theme_color: '#c6a0f6',
         icons: [
           {
-            src: 'favicon.svg',
+            src: 'https://raw.githubusercontent.com/Yagasaki7K/app-pomodoro/main/favicon.svg',
             sizes: '192x192',
-            type: 'image/svg+xml'
+            type: 'image/png'
           },
           {
-            src: 'favicon.svg',
+            src: 'https://raw.githubusercontent.com/Yagasaki7K/app-pomodoro/main/favicon.svg',
             sizes: '512x512',
-            type: 'image/svg+xml'
+            type: 'image/png'
           }
         ]
       },
@@ -59,7 +59,7 @@ export default defineConfig({
           }
         ]
       },
-      includeAssets: ['favicon.svg', 'rain.mp3', 'alarm.mp3'] // Ensure sound files are cached
+      includeAssets: ['favicon-192x192.png', 'favicon-512x512.png', 'songs/rain.mp3', 'songs/alarm.mp3'] // Ensure sound files are cached
     })
   ]
 })
