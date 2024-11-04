@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">Appomodoro</string>
-    <string name="title_activity_main">Appomodoro</string>
-    <string name="package_name">com.pomodoro</string>
-    <string name="custom_url_scheme">com.pomodoro</string>
-</resources>

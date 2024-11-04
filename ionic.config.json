@@ -1,7 +1,0 @@
-{
-  "name": "pomodorotimer",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "custom"
-}
