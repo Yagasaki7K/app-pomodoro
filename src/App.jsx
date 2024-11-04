@@ -61,7 +61,8 @@ class App extends React.Component {
     }
 
     _startTimer() {
-        if (this.timerInterval) clearInterval(this.timerInterval); // Clear any existing intervals
+        // Clear any existing intervals to avoid duplicates
+        if (this.timerInterval) clearInterval(this.timerInterval);
 
         this.timerInterval = setInterval(() => {
             if (this.state.shouldCountDown) {
@@ -80,7 +81,7 @@ class App extends React.Component {
     _handleTimerEnd() {
         this.setState({ shouldCountDown: false });
 
-        // Stop rain sound when the focus session ends
+        // Stop rain sound when focus session ends
         if (!this.state.isBreak) {
             this.rainAudio.pause();
         }
@@ -99,52 +100,57 @@ class App extends React.Component {
         } else {
             this._setBreakTime(300, true);  // Start break session automatically
         }
+
+        this.setState({ isBreak: !this.state.isBreak });
     }
 
     _refresh() {
         this.setState({ time: this.currentModeTime, shouldCountDown: false });
-        this.actionButtonRef.current.disabled = false;
+        if (this.timerInterval) clearInterval(this.timerInterval);
         this.rainAudio.pause(); // Stop rain sound when refreshing
     }
 
     _togglePlay() {
+        // Toggle play/pause state
         this.setState((prevState) => ({
             shouldCountDown: !prevState.shouldCountDown
         }), () => {
             if (this.state.shouldCountDown) {
-                if (!this.state.isBreak) {
-                    this.rainAudio.play(); // Play rain sound during focus mode only
-                }
+                // Start timer if it was paused
                 if (!this.timerInterval) {
                     this._startTimer();
                 }
+                if (!this.state.isBreak) {
+                    this.rainAudio.play(); // Play rain sound only during focus mode
+                }
             } else {
-                this.rainAudio.pause(); // Pause rain sound during breaks or when paused
+                // Pause timer and audio if toggling to pause
+                this.rainAudio.pause();
             }
         });
     }
 
     _pomodoro(totalModeTime, autoStart = false) {
+        // Start a focus session with the specified time
         this.setState({ time: totalModeTime, shouldCountDown: autoStart, isBreak: false });
         this.currentModeTime = totalModeTime;
-        this.actionButtonRef.current.disabled = !autoStart;
 
         if (autoStart) {
-            this.rainAudio.play(); // Play rain sound only if auto-starting the focus session
-            this._startTimer(); // Start the timer automatically
+            this.rainAudio.play(); // Start rain sound only if auto-starting
+            this._startTimer(); // Start timer if auto-starting
         } else {
-            this.rainAudio.pause(); // Ensure rain sound stops if switching manually
+            this.rainAudio.pause(); // Ensure rain sound is paused if manually switching
         }
     }
 
     _setBreakTime(breakTime, autoStart = false) {
+        // Start a break session with the specified time
         this.setState({ time: breakTime, shouldCountDown: autoStart, isBreak: true });
-        this.actionButtonRef.current.disabled = !autoStart;
 
         if (autoStart) {
-            this._startTimer(); // Start the timer automatically if auto-starting the break
+            this._startTimer(); // Start timer automatically if auto-starting
         }
-        this.rainAudio.pause(); // Stop rain sound during breaks
+        this.rainAudio.pause(); // Ensure rain sound is paused during breaks
     }
 
     _currentTab() {
