@@ -28,11 +28,12 @@
 
 * {
   background: var(--greyLight-1);
+  box-sizing: border-box;
 }
 
 html,
 body {
-  height: 100%;
+  min-height: 100vh;
 }
 
 div,
@@ -45,16 +46,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
+  padding: clamp(16px, 4vw, 96px);
 }
 
 #root {
   width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 32px;
+  gap: clamp(20px, 4vw, 56px);
 }
 
 /* CONTAINERS */
@@ -63,8 +65,9 @@ body {
   display: flex;
   width: 100%;
   justify-content: center;
-  padding: 0 16px;
-  box-sizing: border-box;
+  padding: 0 clamp(8px, 2vw, 24px);
+  gap: clamp(8px, 1.5vw, 20px);
+  flex-wrap: wrap;
 }
 
 .main-container {
@@ -72,21 +75,25 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
+  flex-wrap: wrap;
+  gap: clamp(16px, 4vw, 48px);
 }
 
 /* TAB BUTTONS */
 
 .tab-btn {
   font-family: "Montserrat", sans-serif;
-  display: inline;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   font-weight: 600;
-  padding: 10px 20px 10px;
+  padding: 12px 18px;
   color: var(--greyDark);
   border-bottom: 2px solid var(--greyLight-2);
-  width: 100%;
-  max-width: 180px;
+  flex: 1 1 180px;
+  max-width: 220px;
   transition:
     border .8s ease,
     color .5s ease;
@@ -115,12 +122,13 @@ body {
   align-items: center;
   border: none;
   box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
-  padding: 15px;
+  width: clamp(64px, 8vw, 120px);
+  height: clamp(64px, 8vw, 120px);
   border-radius: 50%;
   fill: var(--primary);
   cursor: pointer;
   transition: all .5s ease;
-  margin: 32px;
+  margin: 0;
 }
 
 .action-btn:hover {
@@ -135,17 +143,13 @@ body {
 
 .timer {
   font-family: "Azeret Mono", monospace;
-  font-size: 15vw;
+  font-size: clamp(72px, 18vw, 260px);
   font-weight: 300;
   color: var(--text);
+  text-align: center;
 }
 
 /* FOOTER */
-
-.footer,
-.footer__link {
-  color: #fff;
-}
 
 .footer-header {
   font-family: "Montserrat", sans-serif;
@@ -154,33 +158,22 @@ body {
   font-size: 16px;
   font-weight: 600;
   padding: 10px;
-  position: absolute;
-  bottom: 30px;
   box-sizing: border-box;
   color: var(--text);
-
-  @media (max-width: 534px) {
-    bottom: 50px;
-  }
 }
 
 .footer {
-  /*background-image: linear-gradient(45deg, var(--primary), var(--primary-dark));
-  background-image: linear-gradient(45deg, #3f3e3e, #3f3e3e);*/
   font-family: "Montserrat", sans-serif;
   width: 100%;
   text-align: center;
   font-size: 16px;
   font-weight: 600;
   padding: 10px;
-  position: absolute;
-  bottom: 0;
   box-sizing: border-box;
   color: var(--text);
 }
 
 .footer__link {
-  color: var(--text);
   color: var(--primary);
   text-decoration-line: none;
   transition: all .4s;
@@ -195,35 +188,54 @@ body {
 /* SMARTPHONE/TABLETS */
 
 @media screen and (max-width: 800px) {
-
-  .main-container {
-    flex-wrap: wrap;
-    justify-content: center;
+  .tab-btn {
+    flex: 1 1 100%;
+    max-width: none;
   }
 
   .timer {
-    font-size: 30vw;
+    font-size: clamp(120px, 30vw, 220px);
     order: 1;
   }
 
   .action-btn {
     order: 2;
   }
-
 }
 
 /* WIDE SCREEN */
 
 @media screen and (min-width: 1600px) {
+  #root {
+    max-width: 1400px;
+    gap: clamp(32px, 3vw, 80px);
+  }
 
-  .action-btn {
-    transform: scale(1.5);
-    margin: 0 65px;
+  .main-container {
+    gap: clamp(24px, 3vw, 72px);
   }
 
   .tab-btn {
-    max-width: 225px;
+    max-width: 260px;
     font-size: 20px;
   }
+}
 
+@media screen and (min-width: 1920px) {
+  body {
+    padding: clamp(32px, 5vw, 140px);
+  }
+
+  #root {
+    max-width: 1600px;
+  }
+
+  .timer {
+    font-size: clamp(180px, 12vw, 320px);
+  }
+
+  .action-btn {
+    width: clamp(90px, 6vw, 150px);
+    height: clamp(90px, 6vw, 150px);
+  }
 }
