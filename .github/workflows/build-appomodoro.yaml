@@ -1,0 +1,76 @@
+name: Build Appomodoro Pake Installers
+
+on: 
+  workflow_dispatch:
+  
+permissions:
+  contents: read
+
+concurrency:
+  group: pake-appomodoro-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-windows:
+    name: Build Windows MSI
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare artifact directory
+        shell: bash
+        run: mkdir -p "artifacts/windows"
+      - name: Install Pake CLI with npm
+        shell: bash
+        run: npm install --global pake-cli
+      - name: Verify Pake CLI
+        shell: bash
+        run: pake --version
+      - name: Build Windows installer
+        shell: bash
+        run: pake "https://appomodoro.vercel.app/" --name "Appomodoro"
+      - name: Discover and collect Windows installer
+        shell: bash
+        run: scripts/ci/collect-pake-artifacts.sh --kind windows --search-root . --output-dir "artifacts/windows"
+      - name: Upload Windows installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: appomodoro-windows-msi
+          path: artifacts/windows/*.msi
+          if-no-files-found: error
+
+  build-linux:
+    name: Build Linux DEB
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare artifact directory
+        run: mkdir -p "artifacts/linux"
+      - name: Install Linux dependencies
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y build-essential libssl-dev libgtk-3-dev libwebkit2gtk-4.1-dev libayatana-appindicator3-dev librsvg2-dev libpango1.0-dev libcairo2-dev
+      - name: Install Pake CLI with npm
+        run: npm install --global pake-cli
+      - name: Verify Pake CLI
+        run: pake --version
+      - name: Build Linux installer
+        run: pake "https://appomodoro.vercel.app/" --name "Appomodoro" --targets deb
+      - name: Discover and collect Linux installer
+        run: scripts/ci/collect-pake-artifacts.sh --kind linux --search-root . --output-dir "artifacts/linux"
+      - name: Upload Linux installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: appomodoro-linux-deb
+          path: artifacts/linux/*.deb
+          if-no-files-found: error
